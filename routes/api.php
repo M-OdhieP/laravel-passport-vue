@@ -18,6 +18,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('login',  [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
+Route::get('/logout', [LoginController::class, 'logout'])->middleware('auth:api');
 
 
 Route::middleware(['auth:api'])->group(function () {
@@ -25,5 +26,5 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('users', [UserController::class, 'store']);
     Route::get('users/{user}', [UserController::class, 'show']);
     Route::put('users/{user}', [UserController::class, 'update']);
-    Route::delete('users/{user}', [UserController::class, 'delete']);
+    Route::delete('users/{user}', [UserController::class, 'destroy']);
 });

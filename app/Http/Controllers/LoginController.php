@@ -11,7 +11,11 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        # code...
+        return response()->json([
+            'success' => true,
+            'message' => 'Login page!',
+
+        ]);
     }
     public function login(Request $request)
     {
