@@ -20,6 +20,14 @@ class UsersTableSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Muhamad Odhie prasetio',
+            'email' => 'test_fullstack@mail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(10),
+        ]);
+
+        DB::table('users')->insert([
+            'name' => 'Muhamad Odhie prasetio',
             'email' => 'tiotio179@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),

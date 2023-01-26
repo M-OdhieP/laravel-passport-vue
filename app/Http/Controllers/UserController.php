@@ -80,7 +80,7 @@ class UserController extends Controller
             $user = User::find($id);
             $user->name = $request->input('name');
             $user->email = $request->input('email');
-            $user->password = bcrypt($request->input('password'));
+            // $user->password = bcrypt($request->input('password'));
             $user->save();
 
             return response()->json([
